@@ -1,0 +1,62 @@
+-----------------------------------
+Problematica:
+Un banco necesita que su cajero automático 
+permita a los clientes retirar dinero. Para que el retiro sea válido:
+
+1. El cliente debe ingresar su PIN correcto.
+2. Debe ingresar un monto a retirar
+3. El sistema debe verificar si el cliente tiene saldo suficiente.
+4. Si cumple las condiciones, se descuenta el saldo y se entrega el dinero. Si no, se muestra un error
+-----------------------------------
+
+-----------------------------------
+Algoritmo
+1. Define un saldo inicial 
+2. Pedir al cliente que ingrese su PIN
+3. Mentras intento sea <=:
+    Pedir PIN
+    Si el PIN es correcto pasar al retiro
+    sino sumar 1 intento y mostrar: PIN invalido
+4. Se acaban los 3 intentos 
+    mostrar mensaje: "Tarjet bloqueada" Terminar.
+3. Verificar el PIN
+4. Si el PIN es correcto:
+    pedir el monto a retirar
+si el monto es menor o igual al saldo:
+    descontar el monto al saldo
+    mostrar el saldo final y confirmar retiro
+sino alcanza el saldo:
+    mostrar mensaje: "Lo sentimos, fondos insuficientes."
+5. Si el PIN es incorrecto:
+    Mostrar mensaje: "PIN incorrecto"
+-------------------------------------
+Pseudocodigo
+Inicio
+
+PASO 1 :
+Definir saldo = 5000                  
+Definir pin_correcto = 2528
+
+PASO 2 :
+Pedir pin_usuario
+
+PASO 3 :
+Mientras intento sea <=
+   Mostrar mensaje: Pedir PIN
+   Si el PIN es correcto
+PASO 4 :
+Si pin_usuario == pin_correcto
+    Mostrar mensaje: "Ingrese el monto"
+    Si monto <= saldo
+    saldo = saldo - monto
+    Mostrar mensaje: "Retiro exitoso, su nuevo saldo es:", saldo
+    Si no
+    mostrar mensaje: "Lo sentimos, fondos insuficientes."
+    si no
+     Mostrar mensaje: "PIN incorrecto"
+
+PASO 5 :
+si intentos es igual a intentos max
+Mostrar mensaje: "Tarjet bloqueada" Terminar.
+Fin 
+    
